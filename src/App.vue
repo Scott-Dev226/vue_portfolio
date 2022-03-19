@@ -1,38 +1,106 @@
 <script>
 import { RouterLink, RouterView } from "vue-router";
-import HelloWorld from "@/components/HelloWorld.vue";
+import HomeView from "@/components/HomeView.vue";
+import AboutView from "@/components/AboutView.vue";
+import ProjectsView from "@/components/ProjectsView.vue";
+import SkillsView from "@/components/SkillsView.vue";
+
+export default {
+  components: {
+    HomeView,
+    AboutView,
+    ProjectsView,
+    SkillsView,
+  },
+
+  data() {
+    return {
+      currentPage: "Home",
+    };
+  },
+};
 </script>
 
 <template>
   <header>
     <div class="wrapper">
       <nav id="Nav-Bar">
-        <RouterLink to="/" id="Nav-Item" class="nav_hover">HOME</RouterLink>
-        <RouterLink to="/skills" id="Nav-Item" class="nav_hover"
-          >SKILLS</RouterLink
+        <li @click="this.currentPage = 'Home'" id="Nav-Item" class="nav_hover">
+          HOME
+        </li>
+        <li
+          @click="this.currentPage = 'Skills'"
+          id="Nav-Item"
+          class="nav_hover"
         >
-        <RouterLink to="/projects" id="Nav-Item" class="nav_hover"
-          >PROJECTS</RouterLink
+          SKILLS
+        </li>
+        <li
+          @click="this.currentPage = 'Projects'"
+          id="Nav-Item"
+          class="nav_hover"
         >
+          PROJECTS
+        </li>
 
-        <RouterLink to="/about" id="Nav-Item" class="nav_hover"
-          >ABOUT</RouterLink
-        >
+        <li @click="this.currentPage = 'About'" id="Nav-Item" class="nav_hover">
+          ABOUT
+        </li>
       </nav>
     </div>
   </header>
 
-  <RouterView />
+  <div>
+    <transition name="fade">
+      <HomeView v-if="this.currentPage === 'Home'" />
+    </transition>
+    <transition name="fade">
+      <SkillsView v-if="this.currentPage === 'Skills'" />
+    </transition>
+    <transition name="fade">
+      <ProjectsView v-if="this.currentPage === 'Projects'" />
+    </transition>
+    <transition name="fade">
+      <AboutView v-if="this.currentPage === 'About'" />
+    </transition>
+  </div>
 </template>
 
 <style>
 @import "@/assets/base.css";
 
+.fade-enter-active {
+  transition: all 1s ease, transform 1s ease;
+  transition-delay: 1s;
+}
+
+.fade-enter-from {
+  filter: blur(100px);
+  opacity: 0;
+}
+
+.fade-enter-to {
+  opacity: 1;
+}
+
+.fade-leave-active {
+  transition: all 1s ease, transform 1s ease;
+}
+
+.fade-leave-to {
+  opacity: 0;
+  filter: blur(100px);
+}
+
+.fade-leave-from {
+  opacity: 1;
+}
+
 #app {
   width: 100%;
   height: 100%;
   margin: 0 auto;
-
+  background-color: #000;
   font-weight: normal;
 }
 
@@ -87,6 +155,7 @@ a,
   color: white;
   font-size: 1.5rem;
   margin-right: 2.5em;
+  list-style: none;
 }
 
 .nav_hover:hover {
