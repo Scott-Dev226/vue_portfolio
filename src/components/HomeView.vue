@@ -10,34 +10,40 @@ export default {
       skills_info: [
         {
           id: 0,
-          src: "../src/assets/react-skillLogo.png",
-          desc: "",
+          title: "React JS",
+          src: "../assets/react-skillLogo.png",
+          desc: "A JavaScript library for building user interfaces. Declarative views make your code more predictable and easier to debug.",
         },
         {
           id: 1,
-          src: "../src/assets/vuejs-logo.jpg",
-          desc: "",
+          title: "Vue JS",
+          src: "../assets/vuejs-logo.jpg",
+          desc: "The Progressive JavaScript Framework. An approachable, performant and versatile framework for building web user interfaces.",
         },
         {
           id: 2,
-          src: "../src/assets/nodejs_logo-1024x640.jpg",
-          desc: "",
+          title: "Vue JS",
+          src: "../assets/nodejs_logo-1024x640.jpg",
+          desc: "hmm",
         },
         {
           id: 3,
-          src: "../src/assets/trinity-skillLogo.png",
-          desc: "",
+          title: "Trinity",
+          src: "../assets/trinity-skillLogo.png",
+          desc: "hmm",
         },
         {
           id: 4,
-          src: "../src/assets/php-skillLogo.jpg",
-          desc: "",
+          title: "PHP",
+          src: "../assets/php-skillLogo.jpg",
+          desc: "hmm",
         },
 
         {
           id: 5,
-          src: "../src/assets/sass-logo.png",
-          desc: "",
+          title: "SASS",
+          src: "../assets/sass-logo.png",
+          desc: "hmm",
         },
       ],
     };
@@ -54,16 +60,9 @@ export default {
         duration: 0.7,
         opacity: 0,
       });
-      gsap.to(".slide_msg", {
-        x: -200,
-        stagger: 0.2,
-        duration: 0.7,
-        delay: 3,
-        opacity: 0,
-      });
 
       gsap.to(".slide_msg_name", {
-        color: "blue",
+        color: "tan",
         fontWeight: "bold",
         delay: 2.5,
       });
@@ -76,45 +75,17 @@ export default {
         delay: 3.5,
       });
 
-      gsap.to(".slide_msg2", {
-        x: -200,
-        stagger: 0.2,
-        duration: 0.7,
-        delay: 5,
-        opacity: 0,
-      });
-
       gsap.from(".slide_msg3", {
         x: 200,
         duration: 0.7,
         opacity: 0,
-        delay: 5,
+        delay: 4,
       });
 
       gsap.to(".slide_msg3", {
-        color: "orange",
+        color: "aqua",
         fontWeight: "bold",
-        delay: 6.5,
-      });
-
-      gsap.to(".slide_msg3", {
-        opacity: 0,
-        delay: 7,
-      });
-
-      gsap.to(".slide_msg3", {
-        opacity: 0,
-        delay: 7,
-      });
-
-      gsap.to(".intro_msg_cls", {
-        display: "none",
-        delay: 7.5,
-      });
-
-      gsap.to(".skill_logo_img", {
-        y: -50,
-        delay: 8,
+        delay: 5,
       });
 
       gsap.from(".skill_logo_img", {
@@ -122,7 +93,11 @@ export default {
         duration: 0.7,
         opacity: 0,
         stagger: 0.3,
-        delay: 8,
+      });
+
+      gsap.to(".desc_visibility", {
+        display: "flex",
+        delay: 8.5,
       });
     },
   },
@@ -135,7 +110,7 @@ export default {
 
 <template>
   <main id="home_container">
-    <div id="welcome-message-holder">
+    <div id="hello-world">
       <p id="home-intro-msg" class="intro_msg_cls">
         <span className="slide_msg">Welcome! </span>
         <span className="slide_msg">My </span>
@@ -151,13 +126,18 @@ export default {
 
         <span className="slide_msg3">Front-End Web Developer </span>
       </p>
-
-      <div v-for="skill in this.skills_info" :key="skill.id">
-        <img
-          v-bind:src="skill.src"
-          class="skill_logo_img"
-          @click="nicksFunction(skill.id)"
-        />
+    </div>
+    <div id="welcome-message-holder">
+      <div v-for="(skill, index) in skills_info" :key="skill.id">
+        <div class="skill_desc_holder">
+          <div id="skill_holder">
+            <div id="skill_desc" class="desc_visibility">
+              <h2 id="desc_title">{{ skill.title }}</h2>
+              <p>{{ skill.desc }}</p>
+            </div>
+            <img v-bind:src="skill.src" class="skill_logo_img" />
+          </div>
+        </div>
       </div>
     </div>
   </main>
@@ -165,9 +145,10 @@ export default {
 
 <style scoped>
 #home_container {
-  height: 950px;
+  height: 100%;
   width: 100%;
   display: flex;
+  flex-direction: column;
   background-image: url("../assets/pen-gffef9ab40_1920.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -177,11 +158,23 @@ export default {
   overflow: hidden;
 }
 
+#hello-world {
+  margin-top: 100px;
+  display: flex;
+  width: 100%;
+  padding-left: 20%;
+  padding-right: 20%;
+  flex-wrap: wrap;
+  background-color: black;
+  justify-content: center;
+}
+
 #home-intro-msg {
-  font-family: "Urbanist", sans-serif;
-  font-size: 2.5rem;
+  font-family: "Ramaraja", serif;
+  font-size: 4rem;
   color: white;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .slide_msg {
@@ -198,8 +191,9 @@ export default {
 
 #welcome-message-holder {
   margin-bottom: 350px;
-  margin-top: 150px;
-  margin-left: 60%;
+  margin-top: 50px;
+  margin-left: 35%;
+  margin-right: 35%;
   width: 900px;
   display: flex;
   flex-wrap: wrap;
@@ -207,30 +201,73 @@ export default {
 }
 
 .skill_logo_img {
-  width: 170px;
-  height: 110px;
+  width: 300px;
+  height: 200px;
   margin-bottom: 30px;
   border-radius: 20px;
   margin-right: 20px;
-  border: 1px groove white;
 }
 
 .skill_logo_img:hover {
   border: 3px solid red;
 }
 
+#skill_desc {
+  position: absolute;
+  top: 5px;
+  bottom: 5px;
+  left: 5px;
+  right: 5px;
+  color: white;
+  opacity: 0;
+  width: 90%;
+  height: 190px;
+  border-radius: 10px;
+  z-index: 1000;
+  display: none;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0%;
+  align-items: center;
+  background-color: rgba(31, 31, 31, 0.897);
+  font-style: italic;
+}
+
+#desc_title {
+  color: darkorange;
+}
+
+#skill_desc_holder {
+  width: 320px;
+  height: 500px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  margin-right: 20px;
+  border: 1px groove white;
+}
+
+#skill_desc:hover {
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+}
+
+#skill_holder {
+  position: relative;
+
+  display: flex;
+  justify-content: flex;
+  text-align: center;
+  align-items: center;
+}
+
+#skill_holder:hover {
+  opacity: 0.9;
+}
+
 @media screen and (max-width: 500px) {
   #welcome-message-holder {
     margin-left: 15%;
     width: 100%;
-  }
-  .skill_logo_img {
-    width: 150px;
-    height: 100px;
-    margin-bottom: 30px;
-    border-radius: 20px;
-
-    border: 1px groove white;
   }
 }
 </style>

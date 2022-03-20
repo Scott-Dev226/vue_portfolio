@@ -28,13 +28,7 @@ export default {
         <li @click="this.currentPage = 'Home'" id="Nav-Item" class="nav_hover">
           HOME
         </li>
-        <li
-          @click="this.currentPage = 'Skills'"
-          id="Nav-Item"
-          class="nav_hover"
-        >
-          SKILLS
-        </li>
+
         <li
           @click="this.currentPage = 'Projects'"
           id="Nav-Item"
@@ -70,13 +64,14 @@ export default {
 @import "@/assets/base.css";
 
 .fade-enter-active {
-  transition: all 1s ease, transform 1s ease;
-  transition-delay: 1s;
+  transition: all 0.75s ease-in-out, transform 0.75s ease-in-out;
+  transition-delay: 0.5s;
 }
 
 .fade-enter-from {
   filter: blur(100px);
   opacity: 0;
+  filter: blur(100px);
 }
 
 .fade-enter-to {
@@ -84,7 +79,7 @@ export default {
 }
 
 .fade-leave-active {
-  transition: all 1s ease, transform 1s ease;
+  transition: all 0.75s ease-in-out, transform 0.75s ease-in-out;
 }
 
 .fade-leave-to {
@@ -130,11 +125,11 @@ a,
 #Nav-Bar {
   width: 100%;
   display: flex;
-  height: 25px;
+  height: 60px;
   top: 0;
   left: 0;
   position: fixed;
-  height: 40px;
+
   background-color: black;
   z-index: 1000;
   justify-content: flex-end;
@@ -151,19 +146,42 @@ a,
 }
 
 #Nav-Item {
-  font-family: "Teko", sans-serif;
+  font-family: "Fredoka", sans-serif;
   color: white;
-  font-size: 1.5rem;
-  margin-right: 2.5em;
+  font-size: 1.3rem;
+  margin-right: 2em;
   list-style: none;
+  display: flex;
+  position: relative;
+
+  padding-bottom: 3px;
 }
 
-.nav_hover:hover {
-  color: rgb(40, 120, 196);
-  text-decoration-color: white;
+#Nav-Item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: rgb(12, 144, 151);
+
+  transform: scaleX(0);
+  transition: 0.25s ease-in-out;
+}
+
+#Nav-Item:hover::before {
+  width: 100%;
+
+  transform: scaleX(1);
+}
+
+#Nav-Item:hover {
+  color: rgb(22, 189, 240);
+  text-decoration-color: rgb(136, 42, 5);
   transition-duration: 0.25s;
   transition-timing-function: ease-in-out;
-  text-decoration: underline;
+
   cursor: pointer;
 }
 
@@ -196,6 +214,18 @@ a,
 
     padding: 1rem 0;
     margin-top: 1rem;
+  }
+}
+
+@media (max-width: 750px) {
+  #Nav-Bar {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  #Nav-Item {
+    font-size: 1rem;
   }
 }
 </style>
