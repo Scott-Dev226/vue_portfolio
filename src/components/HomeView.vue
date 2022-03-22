@@ -53,12 +53,42 @@ export default {
     nicksFunction: function (data) {
       alert(data);
     },
+
+    myGoto: function (refName) {
+      var element = this.$refs[refName];
+      var top = element.offsetTop;
+
+      window.scrollTo({
+        top: top,
+        behavior: "smooth",
+      });
+    },
+
     fireGSAP: function () {
+      const text = document.querySelector(".slide_msg_start");
+      const strText = text.textContent;
+      const splitText = strText.split("");
+      text.textContent = "";
+      document.getElementById("home-intro-msg-split").innerHTML = "";
+
+      for (let i = 0; i < splitText.length; i++) {
+        document.getElementById("home-intro-msg-split").innerHTML +=
+          "<span class='slide_msg'>" + splitText[i] + "</span>";
+      }
+
       gsap.from(".slide_msg", {
-        x: 200,
+        x: -200,
         stagger: 0.2,
-        duration: 0.7,
+        duration: 0.5,
         opacity: 0,
+        filter: "blur(100px)",
+        color: "orange",
+      });
+
+      gsap.to(".slide_msg", {
+        y: 50,
+        stagger: 0.2,
+        delay: 0.3,
       });
 
       gsap.to(".slide_msg_name", {
@@ -73,6 +103,7 @@ export default {
         duration: 0.7,
         opacity: 0,
         delay: 3.5,
+        filter: "blur(100px)",
       });
 
       gsap.from(".slide_msg3", {
@@ -93,11 +124,13 @@ export default {
         duration: 0.7,
         opacity: 0,
         stagger: 0.3,
+        delay: 5,
+        filter: blur("80px"),
       });
 
       gsap.to(".desc_visibility", {
         display: "flex",
-        delay: 8.5,
+        delay: 1.5,
       });
     },
   },
@@ -111,8 +144,11 @@ export default {
 <template>
   <main id="home_container">
     <div id="hello-world">
+      <p id="home-intro-msg-split" class="intro_msg_cls">
+        <span className="slide_msg_start">Welcome! </span>
+      </p>
+
       <p id="home-intro-msg" class="intro_msg_cls">
-        <span className="slide_msg">Welcome! </span>
         <span className="slide_msg">My </span>
         <span className="slide_msg">name </span>
         <span className="slide_msg">is </span>
@@ -121,11 +157,20 @@ export default {
         </span>
       </p>
       <p id="home-intro-msg" class="intro_msg_cls">
-        <span className="slide_msg2"> I am </span>
-        <span className="slide_msg2"> a </span>
+        <span className="slide_msg2"> A </span>
+        <span className="slide_msg2"> creative </span>
 
         <span className="slide_msg3">Front-End Web Developer </span>
       </p>
+    </div>
+
+    <div id="cta-holder">
+      <img
+        id="git_logo"
+        src="/assets/github-logo-icon-16158.png"
+        @click="this.myGoto('div1')"
+      />
+      <img id="git_logo" src="/assets/clipart3041366.png" />
     </div>
     <div id="welcome-message-holder">
       <div v-for="(skill, index) in skills_info" :key="skill.id">
@@ -140,6 +185,7 @@ export default {
         </div>
       </div>
     </div>
+    <div ref="div1"></div>
   </main>
 </template>
 
@@ -149,12 +195,12 @@ export default {
   width: 100%;
   display: flex;
   flex-direction: column;
-  background-image: url("../assets/pen-gffef9ab40_1920.jpg");
+
   background-size: cover;
   background-repeat: no-repeat;
   overflow: hidden;
   background-position: center;
-  background-color: #000;
+  background-color: white;
   overflow: hidden;
 }
 
@@ -169,24 +215,55 @@ export default {
   justify-content: center;
 }
 
+#cta-holder {
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#git_logo:hover {
+  border: 2px solid grey;
+  border-radius: 20px;
+  border-color: brown;
+}
+
 #home-intro-msg {
-  font-family: "Ramaraja", serif;
-  font-size: 4rem;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 3rem;
   color: white;
   display: flex;
   flex-wrap: wrap;
 }
 
+#home-intro-msg-split {
+  font-family: "Ubuntu", sans-serif;
+
+  font-size: 3rem;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
 .slide_msg {
   display: flex;
   flex-direction: row;
-  margin-right: 20px;
+  margin-left: 20px;
 }
 
 .slide_msg2 {
   display: flex;
   flex-direction: row;
   margin-right: 20px;
+}
+
+#git_logo {
+  width: 100px;
+}
+
+.slide_msg:hover {
+  color: blue;
 }
 
 #welcome-message-holder {
