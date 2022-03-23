@@ -18,6 +18,18 @@ export default {
       currentPage: "Home",
     };
   },
+
+  methods: {
+    myGoto: function (refName) {
+      var element = this.$refs[refName];
+      var top = element.offsetTop;
+
+      window.scrollTo({
+        top: top,
+        behavior: "smooth",
+      });
+    },
+  },
 };
 </script>
 
@@ -25,19 +37,15 @@ export default {
   <header>
     <div class="wrapper">
       <nav id="Nav-Bar">
-        <li @click="this.currentPage = 'Home'" id="Nav-Item" class="nav_hover">
+        <li @click="this.myGoto('home')" id="Nav-Item" class="nav_hover">
           HOME
         </li>
 
-        <li
-          @click="this.currentPage = 'Projects'"
-          id="Nav-Item"
-          class="nav_hover"
-        >
-          PROJECTS
+        <li @click="this.myGoto('skills')" id="Nav-Item" class="nav_hover">
+          SKILLS
         </li>
 
-        <li @click="this.currentPage = 'About'" id="Nav-Item" class="nav_hover">
+        <li @click="this.myGoto('about')" id="Nav-Item" class="nav_hover">
           ABOUT
         </li>
       </nav>
@@ -45,18 +53,19 @@ export default {
   </header>
 
   <div>
-    <transition name="fade">
-      <HomeView v-if="this.currentPage === 'Home'" />
-    </transition>
-    <transition name="fade">
-      <SkillsView v-if="this.currentPage === 'Skills'" />
-    </transition>
-    <transition name="fade">
-      <ProjectsView v-if="this.currentPage === 'Projects'" />
-    </transition>
-    <transition name="fade">
-      <AboutView v-if="this.currentPage === 'About'" />
-    </transition>
+    <div ref="home">
+      <HomeView ref="home" />
+    </div>
+
+    <div ref="skills">
+      <SkillsView ref="skills" />
+    </div>
+    <div ref="projects">
+      <ProjectsView ref="projects" />
+    </div>
+    <div ref="about">
+      <AboutView />
+    </div>
   </div>
 </template>
 

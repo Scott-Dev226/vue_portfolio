@@ -5,63 +5,9 @@ import gsap from "gsap";
 
 <script>
 export default {
-  data() {
-    return {
-      skills_info: [
-        {
-          id: 0,
-          title: "React JS",
-          src: "../assets/react-skillLogo.png",
-          desc: "A JavaScript library for building user interfaces. Declarative views make your code more predictable and easier to debug.",
-        },
-        {
-          id: 1,
-          title: "Vue JS",
-          src: "../assets/vuejs-logo.jpg",
-          desc: "The Progressive JavaScript Framework. An approachable, performant and versatile framework for building web user interfaces.",
-        },
-        {
-          id: 2,
-          title: "Vue JS",
-          src: "../assets/nodejs_logo-1024x640.jpg",
-          desc: "hmm",
-        },
-        {
-          id: 3,
-          title: "Trinity",
-          src: "../assets/trinity-skillLogo.png",
-          desc: "hmm",
-        },
-        {
-          id: 4,
-          title: "PHP",
-          src: "../assets/php-skillLogo.jpg",
-          desc: "hmm",
-        },
-
-        {
-          id: 5,
-          title: "SASS",
-          src: "../assets/sass-logo.png",
-          desc: "hmm",
-        },
-      ],
-    };
-  },
-
   methods: {
     nicksFunction: function (data) {
       alert(data);
-    },
-
-    myGoto: function (refName) {
-      var element = this.$refs[refName];
-      var top = element.offsetTop;
-
-      window.scrollTo({
-        top: top,
-        behavior: "smooth",
-      });
     },
 
     fireGSAP: function () {
@@ -165,27 +111,9 @@ export default {
     </div>
 
     <div id="cta-holder">
-      <img
-        id="git_logo"
-        src="/assets/github-logo-icon-16158.png"
-        @click="this.myGoto('div1')"
-      />
+      <img id="git_logo" src="/assets/github-logo-icon-16158.png" />
       <img id="git_logo" src="/assets/clipart3041366.png" />
     </div>
-    <div id="welcome-message-holder">
-      <div v-for="(skill, index) in skills_info" :key="skill.id">
-        <div class="skill_desc_holder">
-          <div id="skill_holder">
-            <div id="skill_desc" class="desc_visibility">
-              <h2 id="desc_title">{{ skill.title }}</h2>
-              <p>{{ skill.desc }}</p>
-            </div>
-            <img v-bind:src="skill.src" class="skill_logo_img" />
-          </div>
-        </div>
-      </div>
-    </div>
-    <div ref="div1"></div>
   </main>
 </template>
 
@@ -264,81 +192,6 @@ export default {
 
 .slide_msg:hover {
   color: blue;
-}
-
-#welcome-message-holder {
-  margin-bottom: 350px;
-  margin-top: 50px;
-  margin-left: 35%;
-  margin-right: 35%;
-  width: 900px;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-}
-
-.skill_logo_img {
-  width: 300px;
-  height: 200px;
-  margin-bottom: 30px;
-  border-radius: 20px;
-  margin-right: 20px;
-}
-
-.skill_logo_img:hover {
-  border: 3px solid red;
-}
-
-#skill_desc {
-  position: absolute;
-  top: 5px;
-  bottom: 5px;
-  left: 5px;
-  right: 5px;
-  color: white;
-  opacity: 0;
-  width: 90%;
-  height: 190px;
-  border-radius: 10px;
-  z-index: 1000;
-  display: none;
-  justify-content: center;
-  flex-direction: column;
-  margin: 0%;
-  align-items: center;
-  background-color: rgba(31, 31, 31, 0.897);
-  font-style: italic;
-}
-
-#desc_title {
-  color: darkorange;
-}
-
-#skill_desc_holder {
-  width: 320px;
-  height: 500px;
-  margin-bottom: 30px;
-  border-radius: 10px;
-  margin-right: 20px;
-  border: 1px groove white;
-}
-
-#skill_desc:hover {
-  opacity: 1;
-  transition: all 0.5s ease-in-out;
-}
-
-#skill_holder {
-  position: relative;
-
-  display: flex;
-  justify-content: flex;
-  text-align: center;
-  align-items: center;
-}
-
-#skill_holder:hover {
-  opacity: 0.9;
 }
 
 @media screen and (max-width: 500px) {
