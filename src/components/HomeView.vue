@@ -11,6 +11,7 @@ export default {
     },
 
     fireGSAP: function () {
+      /*
       const text = document.querySelector(".slide_msg_start");
       const strText = text.textContent;
       const splitText = strText.split("");
@@ -78,6 +79,7 @@ export default {
         display: "flex",
         delay: 1.5,
       });
+      */
     },
   },
 
@@ -89,30 +91,12 @@ export default {
 
 <template>
   <main id="home_container">
-    <div id="hello-world">
-      <p id="home-intro-msg-split" class="intro_msg_cls">
-        <span className="slide_msg_start">Welcome! </span>
-      </p>
-
-      <p id="home-intro-msg" class="intro_msg_cls">
-        <span className="slide_msg">My </span>
-        <span className="slide_msg">name </span>
-        <span className="slide_msg">is </span>
-        <span className="slide_msg">
-          <span className="slide_msg_name"> Nick Scott. </span>
-        </span>
-      </p>
-      <p id="home-intro-msg" class="intro_msg_cls">
-        <span className="slide_msg2"> A </span>
-        <span className="slide_msg2"> creative </span>
-
-        <span className="slide_msg3">Front-End Web Developer </span>
-      </p>
-    </div>
+    <div id="hello-world"></div>
 
     <div id="cta-holder">
-      <img id="git_logo" src="/assets/github-logo-icon-16158.png" />
-      <img id="git_logo" src="/assets/clipart3041366.png" />
+      <i class="fab fa-brands fa-github fa-5x" id="contact_logo"></i>
+      <i class="fab fa-brands fa-linkedin fa-5x" id="contact_logo"></i>
+      <i class="far fa-solid fa-envelope fa-5x" id="contact_logo"></i>
     </div>
   </main>
 </template>
@@ -123,11 +107,11 @@ export default {
   width: 100%;
   display: flex;
   flex-direction: column;
-
+  background-image: url("../assets/pexels-gratisography-2255.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   overflow: hidden;
-  background-position: center;
+  background-position: 0% 62.5%;
   background-color: white;
   overflow: hidden;
 }
@@ -148,16 +132,21 @@ export default {
   width: 100%;
   display: flex;
   justify-content: center;
+  margin-bottom: 50px;
 }
 
-#git_logo:hover {
-  border: 2px solid grey;
+#contact_logo {
+  margin-right: 50px;
+}
+
+#contact_logo:hover {
+  transition: all 0.5s ease;
   border-radius: 20px;
-  border-color: brown;
+  color: brown;
 }
 
 #home-intro-msg {
-  font-family: "Ubuntu", sans-serif;
+  font-family: "Quicksand", sans-serif;
   font-size: 3rem;
   color: white;
   display: flex;
@@ -165,7 +154,7 @@ export default {
 }
 
 #home-intro-msg-split {
-  font-family: "Ubuntu", sans-serif;
+  font-family: "Quicksand", sans-serif;
 
   font-size: 3rem;
   color: white;

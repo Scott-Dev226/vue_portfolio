@@ -80,6 +80,7 @@ export default {
 </script>
 
 <template>
+  <h2 class="section_heading">Skills</h2>
   <main id="skills_container">
     <div id="welcome-message-holder">
       <div v-for="(skill, index) in skills_info" :key="skill.id">
@@ -110,6 +111,10 @@ export default {
   background-position: center;
   background-color: white;
   overflow: hidden;
+  background-image: url("../assets/pexels-negative-space-169573.jpg");
+}
+
+.section_heading {
 }
 
 #git_logo:hover {
@@ -139,20 +144,23 @@ export default {
 }
 
 #welcome-message-holder {
-  margin-bottom: 350px;
-  margin-top: 200px;
+  margin-bottom: 150px;
+  margin-top: 100px;
   justify-content: center;
-  width: 700px;
+  border-radius: 15px;
+  width: 950px;
   display: flex;
+
   flex-wrap: wrap;
   flex-direction: row;
+  background-color: black;
 }
 
 #skill_logo_img {
   margin-bottom: 30px;
   border-radius: 20px;
-  margin-right: 50px;
-  color: rgb(1, 1, 145);
+  margin-right: 5px;
+  color: rgb(255, 255, 255);
   width: 300px;
 }
 
@@ -172,13 +180,14 @@ export default {
   height: 150px;
   border-radius: 10px;
   z-index: 1000;
-  display: none;
+
   justify-content: center;
   flex-direction: column;
   margin: 0%;
   align-items: center;
-  background-color: rgba(31, 31, 31, 0.897);
+  background-color: rgb(49, 49, 49);
   font-style: italic;
+  font-size: 1rem;
 }
 
 #desc_title {
@@ -197,6 +206,7 @@ export default {
 #skill_desc:hover {
   opacity: 1;
   transition: all 0.5s ease-in-out;
+  display: block;
 }
 
 #skill_holder {

@@ -46,23 +46,24 @@ export default {
         </li>
 
         <li @click="this.myGoto('about')" id="Nav-Item" class="nav_hover">
-          ABOUT
+          CONTACT
         </li>
       </nav>
     </div>
   </header>
 
-  <div>
+  <div id="main_container">
     <div ref="home">
       <HomeView ref="home" />
+    </div>
+    <div ref="projects">
+      <ProjectsView ref="projects" />
     </div>
 
     <div ref="skills">
       <SkillsView ref="skills" />
     </div>
-    <div ref="projects">
-      <ProjectsView ref="projects" />
-    </div>
+
     <div ref="about">
       <AboutView />
     </div>
@@ -100,12 +101,28 @@ export default {
   opacity: 1;
 }
 
+.section_heading {
+  font-family: "Playfair Display", serif;
+  color: white;
+  background-color: #000;
+  font-size: 5rem;
+}
+
 #app {
   width: 100%;
   height: 100%;
   margin: 0 auto;
   background-color: #000;
   font-weight: normal;
+}
+
+#main_container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }
 
 header {
@@ -139,7 +156,7 @@ a,
   left: 0;
   position: fixed;
 
-  background-color: black;
+  background-color: white;
   z-index: 1000;
   justify-content: flex-end;
   margin-top: 0px;
@@ -156,13 +173,13 @@ a,
 
 #Nav-Item {
   font-family: "Fredoka", sans-serif;
-  color: white;
+  color: black;
   font-size: 1.3rem;
   margin-right: 2em;
   list-style: none;
   display: flex;
   position: relative;
-
+  font-weight: bold;
   padding-bottom: 3px;
 }
 
