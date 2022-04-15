@@ -25,7 +25,7 @@
 
 <style scoped>
 #projects_container {
-  height: 700px;
+  height: 100%;
   width: 100%;
   background-image: url("../assets/pen-gffef9ab40_1920.jpg");
   background-size: cover;
@@ -53,6 +53,7 @@
   margin-right: 40px;
   border: 0.5px solid rgb(58, 58, 58);
   border-radius: 15px;
+  background-color: #000;
 }
 
 .prj_title {
@@ -74,5 +75,24 @@
 
   height: 280px;
   width: 532px;
+}
+
+@media (max-width: 600px) {
+  .proj_holder {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+  }
+
+  .proj_image {
+    height: 230px;
+    width: 400px;
+  }
+
+  .ind_prj {
+    height: 230px;
+    width: 400px;
+    margin-right: 0px;
+  }
 }
 </style>

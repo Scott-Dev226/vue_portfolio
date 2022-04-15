@@ -111,7 +111,7 @@ export default {
   background-position: center;
   background-color: white;
   overflow: hidden;
-  background-image: url("../assets/pexels-negative-space-169573.jpg");
+  background-image: url("../assets/pexels-alex-green-5691859.jpg");
 }
 
 .section_heading {
