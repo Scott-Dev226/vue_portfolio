@@ -14,66 +14,96 @@ export default {
           src: "fab fa-react fa-10x",
           desc: "A JavaScript library for building user interfaces. Declarative views make your code more predictable and easier to debug.",
         },
+
         {
           id: 1,
+          title: "Node JS",
+          src: "fab fa-brands fa-node fa-10x",
+          desc: "Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.",
+        },
+        {
+          id: 2,
           title: "Vue",
           src: "fab fa-brands fa-vuejs fa-10x",
           desc: "The Progressive JavaScript Framework. An approachable, performant and versatile framework for building web user interfaces.",
         },
 
         {
-          id: 2,
-          title: "Node JS",
-          src: "fab fa-brands fa-node fa-10x",
-          desc: "hmm",
-        },
-
-        {
           id: 3,
-          title: "Node JS",
+          title: "Javascript",
           src: "fab fa-brands fa-js-square fa-10x",
-          desc: "hmm",
+          desc: "JavaScript, often abbreviated JS, is a programming language that is one of the core technologies of the World Wide Web. ",
         },
 
         {
           id: 4,
           title: "PHP",
           src: "fab fa-php fa-10x",
-          desc: "hmm",
+          desc: "PHP is a popular general-purpose scripting language that is especially suited to web development.",
         },
 
         {
           id: 5,
           title: "HTML",
           src: "fab fa-html5 fa-10x",
-          desc: "The Progressive JavaScript Framework. An approachable, performant and versatile framework for building web user interfaces.",
+          desc: "HTML (HyperText Markup Language) is the most basic building block of the Web. It defines the meaning and structure of web content.",
         },
         {
           id: 6,
           title: "CSS",
           src: "fab fa-css3-alt fa-10x",
-          desc: "hmm",
+          desc: "Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language such as HTML",
         },
         {
           id: 7,
           title: "Figma",
           src: "fab fa-figma fa-10x",
-          desc: "hmm",
+          desc: "Figma is a vector graphics editor and prototyping tool which is primarily web-based",
         },
 
         {
           id: 8,
           title: "SASS",
           src: "fab fa-sass fa-10x",
-          desc: "hmm",
+          desc: "Sass is a preprocessor scripting language that is interpreted or compiled into Cascading Style Sheets (CSS).",
+        },
+
+        {
+          id: 9,
+          title: "Bootstrap",
+          src: "fab fa-brands fa-bootstrap fa-10x",
+          desc: "Sass is a preprocessor scripting language that is interpreted or compiled into Cascading Style Sheets (CSS).",
         },
       ],
     };
   },
 
+  mounted() {
+    this.scrollTriggerFire();
+  },
+
   methods: {
     nicksFunction: function (data) {
       alert(data);
+    },
+
+    scrollTriggerFire: function () {
+      gsap.registerPlugin(ScrollTrigger);
+
+      const boxes = gsap.utils.toArray(".img_scroll");
+      boxes.forEach((box) => {
+        gsap.from(box, {
+          filter: "blur(50px)",
+          x: 100,
+
+          scrollTrigger: {
+            start: "top 99%",
+            end: "bottom 75%",
+            trigger: box,
+            scrub: true,
+          },
+        });
+      });
     },
   },
 };
@@ -83,14 +113,18 @@ export default {
   <h2 class="section_heading">Skills</h2>
   <main id="skills_container">
     <div id="welcome-message-holder">
-      <div v-for="(skill, index) in skills_info" :key="skill.id">
+      <div v-for="skill in skills_info" :key="skill.id">
         <div class="skill_desc_holder">
           <div id="skill_holder">
             <div id="skill_desc" class="desc_visibility">
               <h2 id="desc_title">{{ skill.title }}</h2>
               <p>{{ skill.desc }}</p>
             </div>
-            <i v-bind:class="skill.src" id="skill_logo_img"></i>
+            <i
+              v-bind:class="skill.src"
+              id="skill_logo_img"
+              class="img_scroll"
+            ></i>
           </div>
         </div>
       </div>
@@ -111,10 +145,12 @@ export default {
   background-position: center;
   background-color: white;
   overflow: hidden;
-  background-image: url("../assets/pexels-alex-green-5691859.jpg");
+  background-image: url("../assets/pen-gffef9ab40_1920.jpg");
 }
 
 .section_heading {
+  font-family: "Raleway", sans-serif;
+  font-size: 3rem;
 }
 
 #git_logo:hover {
@@ -148,7 +184,7 @@ export default {
   margin-top: 100px;
   justify-content: center;
   border-radius: 15px;
-  width: 950px;
+  width: 650px;
   display: flex;
 
   flex-wrap: wrap;
@@ -160,12 +196,8 @@ export default {
   margin-bottom: 30px;
   border-radius: 20px;
   margin-right: 5px;
-  color: rgb(255, 255, 255);
+  color: rgb(172, 223, 250);
   width: 300px;
-}
-
-#skill_logo_img:hover {
-  border: 3px solid red;
 }
 
 #skill_desc {
@@ -180,7 +212,7 @@ export default {
   height: 150px;
   border-radius: 10px;
   z-index: 1000;
-
+  transform: translateX(20px);
   justify-content: center;
   flex-direction: column;
   margin: 0%;
@@ -188,6 +220,7 @@ export default {
   background-color: rgb(49, 49, 49);
   font-style: italic;
   font-size: 1rem;
+  filter: blur(50px);
 }
 
 #desc_title {
@@ -205,8 +238,9 @@ export default {
 
 #skill_desc:hover {
   opacity: 1;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.45s ease-in-out;
   display: block;
+  filter: blur(0px);
 }
 
 #skill_holder {

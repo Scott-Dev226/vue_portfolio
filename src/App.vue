@@ -4,6 +4,7 @@ import HomeView from "@/components/HomeView.vue";
 import AboutView from "@/components/AboutView.vue";
 import ProjectsView from "@/components/ProjectsView.vue";
 import SkillsView from "@/components/SkillsView.vue";
+import gsap from "gsap";
 
 export default {
   components: {
@@ -19,6 +20,14 @@ export default {
     };
   },
 
+  mounted() {
+    gsap.from(".main_container_cls", {
+      duration: 1,
+      opacity: 0,
+      filter: "blur(80px)",
+    });
+  },
+
   methods: {
     myGoto: function (refName) {
       var element = this.$refs[refName];
@@ -28,6 +37,8 @@ export default {
         top: top,
         behavior: "smooth",
       });
+
+      window.scrollTo();
     },
   },
 };
@@ -38,7 +49,7 @@ export default {
     <div class="wrapper">
       <nav id="Nav-Bar">
         <li @click="this.myGoto('home')" id="Nav-Item" class="nav_hover">
-          HOME
+          PROJECTS
         </li>
 
         <li @click="this.myGoto('skills')" id="Nav-Item" class="nav_hover">
@@ -52,7 +63,7 @@ export default {
     </div>
   </header>
 
-  <div id="main_container">
+  <div id="main_container" class="main_container_cls">
     <div ref="home">
       <HomeView ref="home" />
     </div>
@@ -149,7 +160,7 @@ a,
 }
 
 #Nav-Bar {
-  width: 100%;
+  width: 100vw;
   display: flex;
   height: 60px;
   top: 0;
@@ -157,10 +168,11 @@ a,
   position: fixed;
 
   background-color: white;
-  z-index: 1000;
+  z-index: 2000;
   justify-content: flex-end;
   margin-top: 0px;
   align-items: center;
+  margin-bottom: 2px solid black;
 }
 
 #Nav-List {
