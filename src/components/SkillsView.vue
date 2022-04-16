@@ -92,10 +92,9 @@ export default {
 
       const boxes = gsap.utils.toArray(".img_scroll");
       boxes.forEach((box) => {
-        gsap.from(box, {
-          filter: "blur(50px)",
-          x: 100,
-
+        gsap.to(box, {
+          filter: "blur(0px)",
+          x: 0,
           scrollTrigger: {
             start: "top 99%",
             end: "bottom 75%",
@@ -177,6 +176,11 @@ export default {
 
 .slide_msg:hover {
   color: blue;
+}
+
+.img_scroll {
+  filter: blur(50px);
+  transform: translateX(100px);
 }
 
 #welcome-message-holder {
