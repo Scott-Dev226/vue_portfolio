@@ -20,7 +20,33 @@ export default {
     };
   },
 
+  mounted() {
+    this.scrollTriggerFire();
+    gsap.from(".main_container_cls", {
+      duration: 1,
+      opacity: 0,
+      filter: "blur(80px)",
+    });
+  },
+
   methods: {
+    scrollTriggerFire: function () {
+      gsap.registerPlugin(ScrollTrigger);
+
+      const boxes = gsap.utils.toArray(".img_scroll");
+      boxes.forEach((box) => {
+        gsap.to(box, {
+          filter: "blur(0px)",
+          x: 0,
+          scrollTrigger: {
+            start: "top 99%",
+            end: "bottom 75%",
+            trigger: box,
+            scrub: true,
+          },
+        });
+      });
+    },
     myGoto: function (refName) {
       var element = this.$refs[refName];
       var top = element.offsetTop;

@@ -78,31 +78,11 @@ export default {
     };
   },
 
-  mounted() {
-    this.scrollTriggerFire();
-  },
+  mounted() {},
 
   methods: {
     nicksFunction: function (data) {
       alert(data);
-    },
-
-    scrollTriggerFire: function () {
-      gsap.registerPlugin(ScrollTrigger);
-
-      const boxes = gsap.utils.toArray(".img_scroll");
-      boxes.forEach((box) => {
-        gsap.to(box, {
-          filter: "blur(0px)",
-          x: 0,
-          scrollTrigger: {
-            start: "top 99%",
-            end: "bottom 75%",
-            trigger: box,
-            scrub: true,
-          },
-        });
-      });
     },
   },
 };

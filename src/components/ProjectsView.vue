@@ -180,6 +180,21 @@ a:hover {
     width: 400px;
   }
 
+  #skill_desc {
+    font-size: 0.75rem;
+    padding-right: 20px;
+    padding-left: 20px;
+    width: 75%;
+  }
+
+  .prj_title {
+    font-size: 1.5rem;
+  }
+
+  a {
+    font-size: 0.75rem;
+  }
+
   .ind_prj {
     height: 230px;
     width: 400px;
