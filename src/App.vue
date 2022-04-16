@@ -21,10 +21,10 @@ export default {
   },
 
   mounted() {
-    gsap.from(".main_container_cls", {
+    gsap.to(".main_container_cls", {
       duration: 1,
-      opacity: 0,
-      filter: "blur(80px)",
+      opacity: 1,
+      filter: "blur(0px)",
     });
   },
 
@@ -134,6 +134,8 @@ export default {
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  opacity: 0;
+  filter: "blur(80px)";
 }
 
 header {
