@@ -72,7 +72,7 @@ export default {
           id: 9,
           title: "Bootstrap",
           src: "fab fa-brands fa-bootstrap fa-10x",
-          desc: "Sass is a preprocessor scripting language that is interpreted or compiled into Cascading Style Sheets (CSS).",
+          desc: "Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development. ",
         },
       ],
     };
