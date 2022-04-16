@@ -20,14 +20,6 @@ export default {
     };
   },
 
-  mounted() {
-    gsap.to(".main_container_cls", {
-      duration: 1,
-      opacity: 1,
-      filter: "blur(0px)",
-    });
-  },
-
   methods: {
     myGoto: function (refName) {
       var element = this.$refs[refName];
@@ -134,8 +126,6 @@ export default {
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  opacity: 0;
-  filter: "blur(80px)";
 }
 
 header {
