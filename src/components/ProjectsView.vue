@@ -6,18 +6,13 @@
     <div class="proj_holder">
       <div class="ind_prj">
         <h2 class="prj_title">Nick's Guitar Shop</h2>
-        <a
-          href="https://scott-dev226.github.io/Nicks_Guitar_Shop/"
-          target="_blank"
-        >
-          <img src="/assets/Nicks_Guitar_Shop.gif" class="proj_image"
-        /></a>
+
+        <img src="/assets/Nicks_Guitar_Shop.gif" class="proj_image" />
       </div>
       <div class="ind_prj">
         <h2 class="prj_title">Reeler's Choice</h2>
-        <a href="https://nicsco22.dreamhosters.com/login.php" target="_blank">
-          <img src="/assets/Reelers_Choice.gif" class="proj_image" />
-        </a>
+
+        <img src="/assets/Reelers_Choice.gif" class="proj_image" />
       </div>
     </div>
   </main>
