@@ -5,6 +5,7 @@ import AboutView from "@/components/AboutView.vue";
 import ProjectsView from "@/components/ProjectsView.vue";
 import SkillsView from "@/components/SkillsView.vue";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default {
   components: {
@@ -21,12 +22,12 @@ export default {
   },
 
   mounted() {
-    this.scrollTriggerFire();
     gsap.from(".main_container_cls", {
       duration: 1,
       opacity: 0,
       filter: "blur(80px)",
     });
+    this.scrollTriggerFire();
   },
 
   methods: {
@@ -55,8 +56,6 @@ export default {
         top: top,
         behavior: "smooth",
       });
-
-      window.scrollTo();
     },
   },
 };
@@ -66,15 +65,15 @@ export default {
   <header>
     <div class="wrapper">
       <nav id="Nav-Bar">
-        <li @click="this.myGoto('home')" id="Nav-Item" class="nav_hover">
+        <li v-on:click="this.myGoto('home')" id="Nav-Item" class="nav_hover">
           PROJECTS
         </li>
 
-        <li @click="this.myGoto('skills')" id="Nav-Item" class="nav_hover">
+        <li v-on:click="this.myGoto('skills')" id="Nav-Item" class="nav_hover">
           SKILLS
         </li>
 
-        <li @click="this.myGoto('about')" id="Nav-Item" class="nav_hover">
+        <li v-on:click="this.myGoto('about')" id="Nav-Item" class="nav_hover">
           CONTACT
         </li>
       </nav>

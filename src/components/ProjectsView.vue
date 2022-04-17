@@ -164,7 +164,7 @@ a:hover {
 .proj_image {
   border-radius: 15px;
 
-  height: 280px;
+  height: 270px;
   width: 532px;
 }
 
@@ -177,9 +177,9 @@ a:hover {
 
   .proj_image {
     height: 230px;
-    width: 400px;
+    padding-right: 120px;
+    object-fit: cover;
   }
-
   #skill_desc {
     font-size: 0.75rem;
     padding-right: 20px;
