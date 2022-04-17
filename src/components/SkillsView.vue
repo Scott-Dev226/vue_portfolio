@@ -89,7 +89,7 @@ export default {
 </script>
 
 <template>
-  <h2 class="section_heading">Skills</h2>
+  <h2 class="section_heading">SKILLS</h2>
   <main id="skills_container">
     <div id="welcome-message-holder">
       <div v-for="skill in skills_info" :key="skill.id">
@@ -129,7 +129,7 @@ export default {
 
 .section_heading {
   font-family: "Raleway", sans-serif;
-  font-size: 3rem;
+  font-size: 2.75rem;
 }
 
 #git_logo:hover {
@@ -243,6 +243,10 @@ export default {
   opacity: 0.9;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
+  .section_heading {
+    font-family: "Raleway", sans-serif;
+    font-size: 2em;
+  }
 }
 </style>

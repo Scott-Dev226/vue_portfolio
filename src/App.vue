@@ -27,6 +27,14 @@ export default {
       opacity: 0,
       filter: "blur(80px)",
     });
+
+    gsap.from(".nav_hover", {
+      duration: 1,
+      opacity: 0,
+      x: 300,
+      delay: 1,
+      stagger: 0.2,
+    });
     this.scrollTriggerFire();
   },
 

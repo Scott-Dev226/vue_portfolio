@@ -103,7 +103,7 @@ a:hover {
 
 .section_heading {
   font-family: "Raleway", sans-serif;
-  font-size: 3rem;
+  font-size: 2.75rem;
 }
 
 #skill_desc {
@@ -173,6 +173,11 @@ a:hover {
     flex-direction: column;
     align-items: center;
     margin-bottom: 50px;
+  }
+
+  .section_heading {
+    font-family: "Raleway", sans-serif;
+    font-size: 2em;
   }
 
   .proj_image {
