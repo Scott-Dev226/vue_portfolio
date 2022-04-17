@@ -66,7 +66,11 @@
   background-position: center;
   display: flex;
   flex-direction: column;
-  background-color: white;
+  background-image: linear-gradient(
+    to bottom,
+    rgb(10, 10, 10),
+    rgb(152, 144, 139)
+  );
 }
 
 .proj_holder {
@@ -126,12 +130,12 @@ a:hover {
   margin: 0%;
   align-items: center;
   background-color: rgb(49, 49, 49);
-  font-style: italic;
+  font-family: "Raleway", sans-serif;
   font-size: 1rem;
 }
 
 #skill_desc:hover {
-  opacity: 0.85;
+  opacity: 0.95;
   transition: 0.5s all ease;
   filter: blur(0px);
 }
