@@ -22,6 +22,7 @@ export default {
   },
 
   mounted() {
+    this.scrollTriggerFire();
     gsap.from(".main_container_cls", {
       duration: 1,
       opacity: 0,
@@ -35,7 +36,6 @@ export default {
       delay: 1,
       stagger: 0.2,
     });
-    this.scrollTriggerFire();
   },
 
   methods: {
