@@ -59,7 +59,7 @@ export default {
 
         ScrollTrigger.create({
           trigger: box,
-          start: "bottom 99%",
+          start: "top 99%",
           onLeaveBack: () => anim.pause(0),
         });
       });
