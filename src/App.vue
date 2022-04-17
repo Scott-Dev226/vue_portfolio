@@ -22,6 +22,8 @@ export default {
   },
 
   mounted() {
+    gsap.registerPlugin(ScrollTrigger);
+
     this.scrollTriggerFire();
     gsap.from(".main_container_cls", {
       duration: 1,
@@ -40,19 +42,25 @@ export default {
 
   methods: {
     scrollTriggerFire: function () {
-      gsap.registerPlugin(ScrollTrigger);
-
       const boxes = gsap.utils.toArray(".img_scroll");
       boxes.forEach((box) => {
-        gsap.to(box, {
+        const anim = gsap.to(box, {
           filter: "blur(0px)",
+          opacity: 1,
           x: 0,
-          scrollTrigger: {
-            start: "top 99%",
-            end: "bottom 75%",
-            trigger: box,
-            scrub: true,
-          },
+          paused: true,
+        });
+
+        ScrollTrigger.create({
+          trigger: box,
+          start: "top 75%",
+          onEnter: () => anim.play(),
+        });
+
+        ScrollTrigger.create({
+          trigger: box,
+          start: "bottom 99%",
+          onLeaveBack: () => anim.pause(0),
         });
       });
     },

@@ -1,6 +1,7 @@
 <script setup>
 import TheWelcome from "@/components/TheWelcome.vue";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 </script>
 
 <script>
@@ -77,8 +78,6 @@ export default {
       ],
     };
   },
-
-  mounted() {},
 
   methods: {
     nicksFunction: function (data) {
