@@ -66,7 +66,7 @@
   background-position: center;
   display: flex;
   flex-direction: column;
-  background-color: rgb(61, 61, 61);
+  background-color: rgb(234, 231, 231);
 }
 
 .proj_holder {
@@ -205,6 +205,7 @@ a:hover {
     height: 230px;
     width: 400px;
     margin-right: 0px;
+    margin-bottom: 30px;
   }
 }
 </style>
