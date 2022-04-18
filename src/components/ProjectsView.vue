@@ -15,17 +15,21 @@
               A full-stack React / Node JS online shopping application with a
               theme based around guitar and bass instruments.
             </p>
-            <ul id="feature_list">
-              <li>Languages: JavaScript / JSX, CSS</li>
-              <li>
-                Front-end Tools/UI: React JS, Axios, Bootstrap, GSAP, React
-                Framer Motion, Redux, JSON Web Token
-              </li>
-              <li>
-                Back-end Tools/Database: Node.js, MySQL, Express JS, Nodemailer,
-                Bcrypt JS
-              </li>
-            </ul>
+            <br />
+
+            <p>
+              <span id="highlight_txt">Languages: </span> JavaScript / JSX, CSS
+            </p>
+
+            <p>
+              <span id="highlight_txt"> Front-end Tools/UI:</span> React JS,
+              Axios, Bootstrap, GSAP, React Framer Motion, Redux, JSON Web
+            </p>
+
+            <p>
+              <span id="highlight_txt"> Back-end Tools/Database: </span>
+              Node.js, MySQL, Express JS, Nodemailer, Bcrypt JS
+            </p>
           </div>
 
           <img src="/assets/Nicks_Guitar_Shop.gif" class="proj_image" />
@@ -42,11 +46,15 @@
               A full-stack media application allowing users to look up trailers,
               release information, and comment/rate their films of choice.
             </p>
-            <ul id="feature_list">
-              <li>Languages: HTML, CSS, Javascript, PHP</li>
+            <br />
+            <p>
+              <span id="highlight_txt">Languages:</span> HTML, CSS, Javascript,
+              PHP
+            </p>
 
-              <li>Back-end Tools/Database: MySQL</li>
-            </ul>
+            <p>
+              <span id="highlight_txt">Back-end Tools/Database: </span> MySQL
+            </p>
           </div>
           <img src="/assets/Reelers_Choice.gif" class="proj_image" />
         </div>
@@ -115,7 +123,7 @@ a:hover {
   right: 0px;
   color: white;
   opacity: 0;
-  width: 90%;
+
   width: 532px;
   border-radius: 10px;
   z-index: 1000;
@@ -131,8 +139,14 @@ a:hover {
   font-size: 1rem;
 }
 
+#highlight_txt {
+  color: rgb(169, 169, 245);
+  font-weight: bold;
+  font-size: 1.05rem;
+}
+
 #skill_desc:hover {
-  opacity: 0.9;
+  opacity: 0.925;
   transition: 0.5s all ease;
   filter: blur(0px);
 }
@@ -187,10 +201,10 @@ a:hover {
     object-fit: cover;
   }
   #skill_desc {
-    font-size: 0.75rem;
-    padding-right: 20px;
-    padding-left: 20px;
-    width: 75%;
+    font-size: 0.7rem;
+    padding-right: 25px;
+    padding-left: 25px;
+    width: 62.5%;
   }
 
   .prj_title {
@@ -203,9 +217,13 @@ a:hover {
 
   .ind_prj {
     height: 230px;
-    width: 400px;
+    width: 330px;
     margin-right: 0px;
     margin-bottom: 30px;
+  }
+
+  #highlight_txt {
+    font-size: 0.65rem;
   }
 }
 </style>
