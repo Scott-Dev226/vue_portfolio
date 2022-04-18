@@ -12,67 +12,67 @@ export default {
         {
           id: 0,
           title: "React JS",
-          src: "fab fa-react fa-10x",
+          src: "fab fa-react fa-8x",
           desc: "A JavaScript library for building user interfaces. Declarative views make your code more predictable and easier to debug.",
         },
 
         {
           id: 1,
           title: "Node JS",
-          src: "fab fa-brands fa-node fa-10x",
+          src: "fab fa-brands fa-node fa-7x",
           desc: "Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.",
         },
         {
           id: 2,
           title: "Vue",
-          src: "fab fa-brands fa-vuejs fa-10x",
+          src: "fab fa-brands fa-vuejs fa-7x",
           desc: "The Progressive JavaScript Framework. An approachable, performant and versatile framework for building web user interfaces.",
         },
 
         {
           id: 3,
           title: "Javascript",
-          src: "fab fa-brands fa-js-square fa-10x",
+          src: "fab fa-brands fa-js-square fa-7x",
           desc: "JavaScript, often abbreviated JS, is a programming language that is one of the core technologies of the World Wide Web. ",
         },
 
         {
           id: 4,
           title: "PHP",
-          src: "fab fa-php fa-10x",
+          src: "fab fa-php fa-7x",
           desc: "PHP is a popular general-purpose scripting language that is especially suited to web development.",
         },
 
         {
           id: 5,
           title: "HTML",
-          src: "fab fa-html5 fa-10x",
+          src: "fab fa-html5 fa-7x",
           desc: "HTML (HyperText Markup Language) is the most basic building block of the Web. It defines the meaning and structure of web content.",
         },
         {
           id: 6,
           title: "CSS",
-          src: "fab fa-css3-alt fa-10x",
+          src: "fab fa-css3-alt fa-7x",
           desc: "Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language such as HTML",
         },
         {
           id: 7,
           title: "Figma",
-          src: "fab fa-figma fa-10x",
+          src: "fab fa-figma fa-7x",
           desc: "Figma is a vector graphics editor and prototyping tool which is primarily web-based",
         },
 
         {
           id: 8,
           title: "SASS",
-          src: "fab fa-sass fa-10x",
+          src: "fab fa-sass fa-7x",
           desc: "Sass is a preprocessor scripting language that is interpreted or compiled into Cascading Style Sheets (CSS).",
         },
 
         {
           id: 9,
           title: "Bootstrap",
-          src: "fab fa-brands fa-bootstrap fa-10x",
+          src: "fab fa-brands fa-bootstrap fa-7x",
           desc: "Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development. ",
         },
       ],
@@ -129,6 +129,7 @@ export default {
 .section_heading {
   font-family: "Raleway", sans-serif;
   font-size: 2.75rem;
+  background-color: rgb(44, 44, 44);
 }
 
 #git_logo:hover {
@@ -158,8 +159,10 @@ export default {
 }
 
 .img_scroll {
+  transform: translateX(50px);
+  opacity: 0;
   filter: blur(50px);
-  transform: translateX(100px);
+  padding-top: 25px;
 }
 
 #welcome-message-holder {
@@ -167,20 +170,20 @@ export default {
   margin-top: 100px;
   justify-content: center;
   border-radius: 15px;
-  width: 650px;
+  width: 900px;
   display: flex;
-
+  opacity: 0.9;
   flex-wrap: wrap;
   flex-direction: row;
   background-color: black;
 }
 
 #skill_logo_img {
-  margin-bottom: 30px;
   border-radius: 20px;
-  margin-right: 5px;
+
   color: rgb(172, 223, 250);
   width: 300px;
+  height: 150px;
 }
 
 #skill_desc {

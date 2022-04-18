@@ -107,11 +107,11 @@ export default {
   width: 100%;
   display: flex;
   flex-direction: column;
-  background-image: url("../assets/pexels-gratisography-2255.jpg");
+  background-image: url("../assets/pexels-damon-hall-1705253.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   overflow: hidden;
-  background-position: 0% 62.5%;
+  background-position: 0% 40.5%;
   background-color: white;
   overflow: hidden;
 }
@@ -137,6 +137,7 @@ export default {
 
 #contact_logo {
   margin-right: 50px;
+  color: rgb(0, 41, 118);
 }
 
 #contact_logo:hover {

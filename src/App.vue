@@ -43,25 +43,24 @@ export default {
   methods: {
     scrollTriggerFire: function () {
       const boxes = gsap.utils.toArray(".img_scroll");
-      boxes.forEach((box) => {
-        const anim = gsap.to(box, {
-          filter: "blur(0px)",
-          opacity: 1,
-          x: 0,
-          paused: true,
-        });
+      const anim = gsap.to(".img_scroll", {
+        filter: "blur(0px)",
+        opacity: 1,
+        x: 0,
+        paused: true,
+        stagger: 0.2,
+      });
 
-        ScrollTrigger.create({
-          trigger: box,
-          start: "top 75%",
-          onEnter: () => anim.play(),
-        });
+      ScrollTrigger.create({
+        trigger: ".img_scroll",
+        start: "top 70%",
+        onEnter: () => anim.play(),
+      });
 
-        ScrollTrigger.create({
-          trigger: box,
-          start: "top 99%",
-          onLeaveBack: () => anim.pause(0),
-        });
+      ScrollTrigger.create({
+        trigger: ".img_scroll",
+        start: "top 90%",
+        onLeaveBack: () => anim.pause(0),
       });
     },
     myGoto: function (refName) {

@@ -59,18 +59,14 @@
 #projects_container {
   height: 100%;
   width: 100%;
-
+  margin-bottom: 100px;
   background-size: cover;
   background-repeat: no-repeat;
   overflow: hidden;
   background-position: center;
   display: flex;
   flex-direction: column;
-  background-image: linear-gradient(
-    to bottom,
-    rgb(10, 10, 10),
-    rgb(152, 144, 139)
-  );
+  background-color: rgb(61, 61, 61);
 }
 
 .proj_holder {
@@ -108,6 +104,7 @@ a:hover {
 .section_heading {
   font-family: "Raleway", sans-serif;
   font-size: 2.75rem;
+  background-color: rgb(44, 44, 44);
 }
 
 #skill_desc {
@@ -129,13 +126,13 @@ a:hover {
   flex-direction: column;
   margin: 0%;
   align-items: center;
-  background-color: rgb(49, 49, 49);
+  background-color: rgb(16, 16, 16);
   font-family: "Raleway", sans-serif;
   font-size: 1rem;
 }
 
 #skill_desc:hover {
-  opacity: 0.95;
+  opacity: 0.9;
   transition: 0.5s all ease;
   filter: blur(0px);
 }
