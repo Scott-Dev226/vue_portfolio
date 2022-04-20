@@ -94,9 +94,9 @@ export default {
     <div id="hello-world"></div>
 
     <div id="cta-holder">
-      <i class="fab fa-brands fa-github fa-5x" id="contact_logo"></i>
-      <i class="fab fa-brands fa-linkedin fa-5x" id="contact_logo"></i>
-      <i class="far fa-solid fa-envelope fa-5x" id="contact_logo"></i>
+      <a href="https://github.com/Scott-Dev226">
+        <i class="fab fa-brands fa-github-square fa-5x" id="contact_logo"></i>
+      </a>
     </div>
   </main>
 </template>
@@ -107,12 +107,13 @@ export default {
   width: 100%;
   display: flex;
   flex-direction: column;
-  background-image: url("../assets/pexels-damon-hall-1705253.jpg");
+  background-image: url("../assets/pexels-daisy-laparra-633811 (5).jpg");
+
   background-size: cover;
   background-repeat: no-repeat;
   overflow: hidden;
-  background-position: 0% 40.5%;
-  background-color: white;
+  background-position: 0%85.5%;
+  background-color: rgb(5, 5, 5);
   overflow: hidden;
 }
 
@@ -128,7 +129,7 @@ export default {
 }
 
 #cta-holder {
-  margin-top: 50px;
+  margin-top: 10px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -136,14 +137,12 @@ export default {
 }
 
 #contact_logo {
-  margin-right: 50px;
-  color: rgb(0, 41, 118);
+  color: black;
 }
 
 #contact_logo:hover {
-  transition: all 0.5s ease;
-  border-radius: 20px;
-  color: brown;
+  transition: all 0.75s ease;
+  opacity: 0.5;
 }
 
 #home-intro-msg {

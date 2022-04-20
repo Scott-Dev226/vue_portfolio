@@ -2,7 +2,7 @@
 
 <template>
   <main id="projects_container">
-    <h2 class="section_heading">PROJECTS</h2>
+    <h2 class="section_heading">WEB PROJECTS</h2>
     <div class="proj_holder">
       <div class="ind_prj">
         <a href="https://scott-dev226.github.io/Nicks_Guitar_Shop/"
@@ -28,7 +28,7 @@
 
             <p>
               <span id="highlight_txt"> Back-end Tools/Database: </span>
-              Node.js, MySQL, Express JS, Nodemailer, Bcrypt JS
+              Node.js, MySQL, Express, Nodemailer, Bcrypt JS
             </p>
           </div>
 
@@ -74,7 +74,7 @@
   background-position: center;
   display: flex;
   flex-direction: column;
-  background-color: rgb(234, 231, 231);
+  background-color: rgb(4, 0, 16);
 }
 
 .proj_holder {
@@ -89,7 +89,8 @@
 a {
   z-index: 1000;
   color: white;
-  font-size: 1.1rem;
+  font-size: 1rem;
+  font-family: "Quicksand", sans-serif;
 }
 
 a:hover {
@@ -99,20 +100,21 @@ a:hover {
 
 .ind_prj {
   margin-top: 20px;
-  height: 300px;
-  width: 532px;
+  height: 220px;
+  width: 480px;
   overflow: hidden;
   object-fit: cover;
   margin-right: 40px;
   border: 0.5px solid rgb(58, 58, 58);
   border-radius: 15px;
   background-color: #000;
+  border: 2.5px solid #002a44;
 }
 
 .section_heading {
-  font-family: "Raleway", sans-serif;
-  font-size: 2.75rem;
-  background-color: rgb(44, 44, 44);
+  font-family: "Quicksand", sans-serif;
+  font-size: 2.25rem;
+  color: white;
 }
 
 #skill_desc {
@@ -124,11 +126,11 @@ a:hover {
   color: white;
   opacity: 0;
 
-  width: 532px;
+  width: 480px;
   border-radius: 10px;
   z-index: 1000;
-  padding-right: 50px;
-  padding-left: 50px;
+  padding-right: 20px;
+  padding-left: 20px;
   filter: blur(50px);
   justify-content: center;
   flex-direction: column;
@@ -136,13 +138,13 @@ a:hover {
   align-items: center;
   background-color: rgb(16, 16, 16);
   font-family: "Raleway", sans-serif;
-  font-size: 1rem;
+  font-size: 0.75rem;
 }
 
 #highlight_txt {
   color: rgb(169, 169, 245);
   font-weight: bold;
-  font-size: 1.05rem;
+  font-size: 0.85rem;
 }
 
 #skill_desc:hover {
@@ -162,7 +164,7 @@ a:hover {
 
 .prj_title {
   color: rgb(78, 160, 227);
-  font-size: 2rem;
+  font-size: 1.4rem;
 
   font-family: "Fredoka", sans-serif;
 }
@@ -178,9 +180,9 @@ a:hover {
 
 .proj_image {
   border-radius: 15px;
-
-  height: 270px;
-  width: 532px;
+  opacity: 0.85;
+  height: 220px;
+  width: 480px;
 }
 
 @media (max-width: 600px) {

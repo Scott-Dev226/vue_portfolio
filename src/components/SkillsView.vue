@@ -121,15 +121,16 @@ export default {
   background-repeat: no-repeat;
   overflow: hidden;
   background-position: center;
-  background-color: white;
+  background-color: black;
   overflow: hidden;
   background-image: url("../assets/pen-gffef9ab40_1920.jpg");
 }
 
 .section_heading {
-  font-family: "Raleway", sans-serif;
-  font-size: 2.75rem;
-  background-color: rgb(44, 44, 44);
+  font-family: "Quicksand", sans-serif;
+  font-size: 2.5rem;
+  background-color: rgb(22, 22, 22);
+  color: white;
 }
 
 #git_logo:hover {
@@ -175,7 +176,7 @@ export default {
   opacity: 0.9;
   flex-wrap: wrap;
   flex-direction: row;
-  background-color: black;
+  background-color: rgb(4, 0, 16);
 }
 
 #skill_logo_img {

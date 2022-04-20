@@ -166,6 +166,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  background-color: #000;
 }
 
 header {
@@ -199,7 +200,7 @@ a,
   left: 0;
   position: fixed;
 
-  background-color: white;
+  background-color: rgb(4, 0, 16);
   z-index: 2000;
   justify-content: flex-end;
   margin-top: 0px;
@@ -216,14 +217,14 @@ a,
 }
 
 #Nav-Item {
-  font-family: "Fredoka", sans-serif;
-  color: black;
-  font-size: 1.3rem;
+  font-family: "Saira Condensed", sans-serif;
+  color: white;
+  font-size: 1.5rem;
   margin-right: 2em;
   list-style: none;
   display: flex;
   position: relative;
-  font-weight: bold;
+
   padding-bottom: 3px;
 }
 
