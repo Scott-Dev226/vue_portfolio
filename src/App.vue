@@ -200,7 +200,7 @@ a,
   left: 0;
   position: fixed;
 
-  background-color: rgb(4, 0, 16);
+  background-color: black;
   z-index: 2000;
   justify-content: flex-end;
   margin-top: 0px;
@@ -219,7 +219,7 @@ a,
 #Nav-Item {
   font-family: "Saira Condensed", sans-serif;
   color: white;
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   margin-right: 2em;
   list-style: none;
   display: flex;

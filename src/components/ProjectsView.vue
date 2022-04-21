@@ -5,8 +5,9 @@
     <h2 class="section_heading">WEB PROJECTS</h2>
     <div class="proj_holder">
       <div class="ind_prj">
-        <a href="https://scott-dev226.github.io/Nicks_Guitar_Shop/"
-          >Click Here to Visit Page
+        <a href="https://scott-dev226.github.io/Nicks_Guitar_Shop/">
+          <span id="highlight_txt2"> Click Here to Visit Page </span> (Hover
+          below for info)
         </a>
         <div class="skill_desc_holder">
           <div id="skill_desc" class="desc_visibility">
@@ -37,14 +38,16 @@
       </div>
       <div class="ind_prj">
         <a href="https://nicsco22.dreamhosters.com/login.php">
-          Click Here to Visit Page
+          <span id="highlight_txt2"> Click Here to Visit Page </span> (Hover
+          below for info)
         </a>
         <div class="skill_desc_holder">
           <div id="skill_desc" class="desc_visibility">
             <h2 class="prj_title">Reeler's Choice</h2>
             <p>
-              A full-stack media application allowing users to look up trailers,
-              release information, and comment/rate their films of choice.
+              A full-stack media application created with Javascript and PHP -
+              allowing users to look up trailers, release information, and
+              comment/rate their films of choice.
             </p>
             <br />
             <p>
@@ -93,8 +96,8 @@ a {
   font-family: "Quicksand", sans-serif;
 }
 
-a:hover {
-  color: rgb(146, 196, 254);
+#highlight_txt2:hover {
+  color: rgb(247, 14, 14);
   transition: 0.35s all ease;
 }
 
@@ -105,10 +108,50 @@ a:hover {
   overflow: hidden;
   object-fit: cover;
   margin-right: 40px;
-  border: 0.5px solid rgb(58, 58, 58);
   border-radius: 15px;
-  background-color: #000;
-  border: 2.5px solid #002a44;
+  background-color: black;
+}
+
+.ind_prj:before {
+  position: absolute;
+  content: "";
+  height: 0;
+  width: 0;
+  border: 3px solid transparent;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  border-radius: 15px;
+}
+
+.ind_prj:after {
+  position: absolute;
+  content: "";
+  height: 0;
+  width: 0;
+  border: 1px dotted rgb(238, 88, 42);
+  top: 0;
+  right: 0;
+  box-sizing: border-box;
+  border-radius: 15px;
+}
+
+.ind_prj:hover:before {
+  height: 220px;
+  width: 480px;
+  border: 1px dotted rgb(238, 88, 42);
+  border-right: none;
+  border-bottom: none;
+  transition: 0.3s linear, width 0.3s linear 0.3s;
+}
+
+.ind_prj:hover:after {
+  height: 220px;
+  width: 480px;
+  border: 1px dotted rgb(238, 88, 42);
+  border-left: none;
+  border-top: none;
+  transition: height 0.3s linear, width 0.3s linear 0.3s;
 }
 
 .section_heading {
@@ -119,15 +162,16 @@ a:hover {
 
 #skill_desc {
   position: absolute;
-  top: 0px;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
+
+  left: 2px;
+  right: 2px;
+  border-radius: 15px;
   color: white;
   opacity: 0;
 
-  width: 480px;
-  border-radius: 10px;
+  height: 180px;
+  width: 470px;
+
   z-index: 1000;
   padding-right: 20px;
   padding-left: 20px;
@@ -144,7 +188,13 @@ a:hover {
 #highlight_txt {
   color: rgb(169, 169, 245);
   font-weight: bold;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
+}
+
+#highlight_txt2 {
+  color: rgb(169, 169, 245);
+  font-weight: bold;
+  font-size: 0.8rem;
 }
 
 #skill_desc:hover {
@@ -154,12 +204,15 @@ a:hover {
 }
 
 .skill_desc_holder {
-  height: 300px;
+  height: 280px;
   width: 532px;
   opacity: 1;
   z-index: 1000;
-  background-color: #000;
-  border-top: 0.5px solid rgb(109, 109, 109);
+
+  top: 5px;
+  bottom: 5px;
+  left: 5px;
+  right: 5px;
 }
 
 .prj_title {
@@ -173,16 +226,15 @@ a:hover {
   margin-top: 20px;
 }
 
-.ind_prj:hover {
-  border: 2px solid red;
-  transition: all 0.5s ease;
-}
-
 .proj_image {
-  border-radius: 15px;
   opacity: 0.85;
-  height: 220px;
-  width: 480px;
+  height: 180px;
+  border-radius: 15px;
+  width: 380px;
+  background-color: transparent;
+  outline: none;
+  margin-right: 65px;
+  position: relative;
 }
 
 @media (max-width: 600px) {
@@ -198,19 +250,21 @@ a:hover {
   }
 
   .proj_image {
-    height: 230px;
-    padding-right: 120px;
+    height: 180px;
+    width: 505px;
+    padding-right: 210px;
     object-fit: cover;
   }
   #skill_desc {
-    font-size: 0.7rem;
-    padding-right: 25px;
-    padding-left: 25px;
-    width: 62.5%;
+    font-size: 0.675rem;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 59%;
+    height: 187.5px;
   }
 
   .prj_title {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
   }
 
   a {
@@ -218,13 +272,17 @@ a:hover {
   }
 
   .ind_prj {
-    height: 230px;
+    height: 220px;
     width: 330px;
     margin-right: 0px;
     margin-bottom: 30px;
   }
 
   #highlight_txt {
+    font-size: 0.65rem;
+  }
+
+  #highlight_txt2 {
     font-size: 0.65rem;
   }
 }

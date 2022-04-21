@@ -107,12 +107,12 @@ export default {
   width: 100%;
   display: flex;
   flex-direction: column;
-  background-image: url("../assets/pexels-daisy-laparra-633811 (5).jpg");
+  background-image: url("../assets/pexels-marko-obrvan-306344.jpg");
 
   background-size: cover;
   background-repeat: no-repeat;
   overflow: hidden;
-  background-position: 0%85.5%;
+  background-position: 0%93%;
   background-color: rgb(5, 5, 5);
   overflow: hidden;
 }
