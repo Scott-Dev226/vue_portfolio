@@ -3,6 +3,7 @@ import { RouterLink, RouterView } from "vue-router";
 import HomeView from "@/components/HomeView.vue";
 import AboutView from "@/components/AboutView.vue";
 import ProjectsView from "@/components/ProjectsView.vue";
+import NameSVG from "@/components/NameSVG.vue";
 import SkillsView from "@/components/SkillsView.vue";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -13,6 +14,7 @@ export default {
     AboutView,
     ProjectsView,
     SkillsView,
+    NameSVG,
   },
 
   data() {
@@ -35,7 +37,7 @@ export default {
       duration: 1,
       opacity: 0,
       x: 300,
-      delay: 1,
+      delay: 2.75,
       stagger: 0.2,
     });
   },
@@ -49,6 +51,7 @@ export default {
         x: 0,
         paused: true,
         stagger: 0.2,
+        duration: 1,
       });
 
       ScrollTrigger.create({
@@ -97,7 +100,7 @@ export default {
 
   <div id="main_container" class="main_container_cls">
     <div ref="home">
-      <HomeView ref="home" />
+      <NameSVG />
     </div>
     <div ref="projects">
       <ProjectsView ref="projects" />
@@ -205,7 +208,6 @@ a,
   justify-content: flex-end;
   margin-top: 0px;
   align-items: center;
-  margin-bottom: 2px solid black;
 }
 
 #Nav-List {
@@ -218,7 +220,7 @@ a,
 
 #Nav-Item {
   font-family: "Saira Condensed", sans-serif;
-  color: white;
+  color: #1aa9d7;
   font-size: 1.35rem;
   margin-right: 2em;
   list-style: none;
@@ -297,6 +299,10 @@ a,
 @media (max-width: 600px) {
   #Nav-Item {
     font-size: 1rem;
+  }
+
+  #Nav-Bar {
+    border-bottom: 1px solid rgb(11, 149, 223);
   }
 }
 </style>

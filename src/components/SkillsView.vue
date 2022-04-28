@@ -6,6 +6,14 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 <script>
 export default {
+  mounted() {
+    gsap.from(".skills_container_cls", {
+      opacity: 0,
+      duration: 2,
+      delay: 4.5,
+    });
+  },
+
   data() {
     return {
       skills_info: [
@@ -89,7 +97,7 @@ export default {
 
 <template>
   <h2 class="section_heading">SKILLS</h2>
-  <main id="skills_container">
+  <main id="skills_container" class="skills_container_cls">
     <div id="welcome-message-holder">
       <div v-for="skill in skills_info" :key="skill.id">
         <div class="skill_desc_holder">
@@ -160,7 +168,7 @@ export default {
 }
 
 .img_scroll {
-  transform: translateX(50px);
+  transform: translateX(150px);
   opacity: 0;
   filter: blur(50px);
   padding-top: 25px;

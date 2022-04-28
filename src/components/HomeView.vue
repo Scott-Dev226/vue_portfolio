@@ -92,12 +92,6 @@ export default {
 <template>
   <main id="home_container">
     <div id="hello-world"></div>
-
-    <div id="cta-holder">
-      <a href="https://github.com/Scott-Dev226">
-        <i class="fab fa-brands fa-github-square fa-5x" id="contact_logo"></i>
-      </a>
-    </div>
   </main>
 </template>
 
@@ -107,7 +101,6 @@ export default {
   width: 100%;
   display: flex;
   flex-direction: column;
-  background-image: url("../assets/pexels-marko-obrvan-306344.jpg");
 
   background-size: cover;
   background-repeat: no-repeat;
@@ -129,15 +122,13 @@ export default {
 }
 
 #cta-holder {
-  margin-top: 10px;
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-bottom: 50px;
 }
 
 #contact_logo {
-  color: black;
+  color: #1aa9d7;
 }
 
 #contact_logo:hover {

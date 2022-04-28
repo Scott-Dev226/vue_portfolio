@@ -1,8 +1,18 @@
-<script setup></script>
+<script>
+import anime from "animejs";
+import gsap from "gsap";
+
+export default {
+  mounted() {
+    gsap.from(".section_heading", { opacity: 0, duration: 2, delay: 3.5 });
+    gsap.from(".ind_prj", { opacity: 0, duration: 2, y: 100, delay: 2.5 });
+  },
+};
+</script>
 
 <template>
   <main id="projects_container">
-    <h2 class="section_heading">WEB PROJECTS</h2>
+    <h2 class="section_heading">PROJECTS</h2>
     <div class="proj_holder">
       <div class="ind_prj">
         <a href="https://scott-dev226.github.io/Nicks_Guitar_Shop/">
@@ -129,7 +139,7 @@ a {
   content: "";
   height: 0;
   width: 0;
-  border: 1px dotted rgb(238, 88, 42);
+  border: 1px dotted #1aa9d7;
   top: 0;
   right: 0;
   box-sizing: border-box;
@@ -139,7 +149,7 @@ a {
 .ind_prj:hover:before {
   height: 220px;
   width: 480px;
-  border: 1px dotted rgb(238, 88, 42);
+  border: 1px dotted #1aa9d7;
   border-right: none;
   border-bottom: none;
   transition: 0.3s linear, width 0.3s linear 0.3s;
@@ -148,7 +158,7 @@ a {
 .ind_prj:hover:after {
   height: 220px;
   width: 480px;
-  border: 1px dotted rgb(238, 88, 42);
+  border: 1px dotted #1aa9d7;
   border-left: none;
   border-top: none;
   transition: height 0.3s linear, width 0.3s linear 0.3s;
@@ -246,7 +256,7 @@ a {
 
   .section_heading {
     font-family: "Raleway", sans-serif;
-    font-size: 2em;
+    font-size: 1.7em;
   }
 
   .proj_image {
