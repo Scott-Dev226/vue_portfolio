@@ -88,6 +88,8 @@ export default {
   display: flex;
   flex-direction: column;
   background-color: rgb(4, 0, 16);
+  background-position: 0%20.5%;
+  background-image: url("../assets/pexels-eberhard-grossgasteiger-691668.jpg");
 }
 
 .proj_holder {
@@ -139,7 +141,7 @@ a {
   content: "";
   height: 0;
   width: 0;
-  border: 1px dotted #1aa9d7;
+  border: 2.5px dotted red;
   top: 0;
   right: 0;
   box-sizing: border-box;
@@ -149,7 +151,7 @@ a {
 .ind_prj:hover:before {
   height: 220px;
   width: 480px;
-  border: 1px dotted #1aa9d7;
+  border: 2.5px dotted red;
   border-right: none;
   border-bottom: none;
   transition: 0.3s linear, width 0.3s linear 0.3s;
@@ -158,7 +160,7 @@ a {
 .ind_prj:hover:after {
   height: 220px;
   width: 480px;
-  border: 1px dotted #1aa9d7;
+  border: 2.5px dotted red;
   border-left: none;
   border-top: none;
   transition: height 0.3s linear, width 0.3s linear 0.3s;
