@@ -10,7 +10,7 @@ export default {
     gsap.from(".skills_container_cls", {
       opacity: 0,
       duration: 2,
-      delay: 4.5,
+      delay: 2,
     });
   },
 

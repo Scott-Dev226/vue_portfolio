@@ -4,8 +4,8 @@ import gsap from "gsap";
 
 export default {
   mounted() {
-    gsap.from(".section_heading", { opacity: 0, duration: 2, delay: 3.5 });
-    gsap.from(".ind_prj", { opacity: 0, duration: 2, y: 100, delay: 2.5 });
+    gsap.from(".section_heading", { opacity: 0, duration: 2, delay: 2 });
+    gsap.from(".ind_prj", { opacity: 0, duration: 2, y: 100, delay: 1 });
   },
 };
 </script>
