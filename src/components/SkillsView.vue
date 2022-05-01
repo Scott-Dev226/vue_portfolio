@@ -64,7 +64,7 @@ export default {
           id: 6,
           title: "CSS",
           src: "fab fa-css3-alt fa-7x",
-          desc: "Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language such as HTML",
+          desc: "Cascading Style Sheets (CSS) is a language used for describing the presentation of a document written in a markup language such as HTML",
         },
         {
           id: 7,

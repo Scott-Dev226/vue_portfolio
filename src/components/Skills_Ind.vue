@@ -124,7 +124,7 @@ export default {
   font-style: italic;
   font-size: 1rem;
   filter: blur(50px);
-  border-top: 2px solid white;
+  border: 3px solid black;
 }
 
 #desc_title {

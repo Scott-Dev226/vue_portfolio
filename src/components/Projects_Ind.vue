@@ -15,12 +15,12 @@ export default {
 
 <template>
   <div id="ins_holder">
-    <a :href="href">
-      <span id="highlight_txt2"> Click Here to Visit Web Page </span> |
+    <a :href="href" id="btn_link">
+      <button id="highlight_btn">Visit Web Page</button>
     </a>
 
-    <a :href="href2">
-      <span id="highlight_txt3"> Click to View Github Repository </span>
+    <a :href="href" id="btn_link">
+      <button id="highlight_btn">View Github Repository</button>
     </a>
 
     <p id="hover_txt">~Hover below for info~</p>
@@ -58,10 +58,15 @@ a {
   font-size: 1rem;
   font-family: "Quicksand", sans-serif;
   margin-bottom: 0;
+  background: none;
 }
 
 #ins_holder {
   border-bottom: 0.5px dashed rgb(54, 54, 54);
+}
+
+#btn_link:hover {
+  background-color: black;
 }
 
 #hover_txt {
@@ -78,8 +83,9 @@ a {
   text-decoration: underline;
 }
 
-#highlight_txt3:hover {
-  color: rgb(247, 14, 14);
+#highlight_btn:hover {
+  background-color: #1687b0;
+
   transition: 0.35s all ease;
 }
 
@@ -179,10 +185,16 @@ a {
   font-size: 0.8rem;
 }
 
-#highlight_txt3 {
-  color: rgb(35, 247, 187);
+#highlight_btn {
+  color: rgb(235, 243, 240);
+  background-color: rgb(0, 0, 0);
   font-size: 0.8rem;
   font-family: "Saira Semi Condensed", sans-serif;
+  width: 140px;
+  border-radius: 10px;
+  margin-top: 5px;
+  border: 0.5px solid #1a72d7;
+  margin-right: 5px;
 }
 
 #skill_desc:hover {
@@ -229,6 +241,21 @@ a {
   .section_heading {
     font-family: "Raleway", sans-serif;
     font-size: 1.7em;
+  }
+
+  #hover_txt {
+    font-size: 0.6rem;
+  }
+
+  #highlight_btn {
+    color: rgb(235, 243, 240);
+    background-color: rgb(0, 0, 0);
+    font-size: 0.6rem;
+    font-family: "Saira Semi Condensed", sans-serif;
+    width: 110px;
+    border-radius: 5px;
+    margin-top: 5px;
+    border: 0.5px solid #1a72d7;
   }
 
   .proj_image {
