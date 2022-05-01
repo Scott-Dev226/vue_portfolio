@@ -19,8 +19,8 @@ export default {
       <button id="highlight_btn">Visit Web Page</button>
     </a>
 
-    <a :href="href" id="btn_link">
-      <button id="highlight_btn">View Github Repository</button>
+    <a :href="href2" id="btn_link">
+      <button id="highlight_btn">Github Repository</button>
     </a>
 
     <p id="hover_txt">~Hover below for info~</p>
@@ -252,7 +252,7 @@ a {
     background-color: rgb(0, 0, 0);
     font-size: 0.6rem;
     font-family: "Saira Semi Condensed", sans-serif;
-    width: 110px;
+    width: 115px;
     border-radius: 5px;
     margin-top: 5px;
     border: 0.5px solid #1a72d7;
