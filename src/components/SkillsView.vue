@@ -1,11 +1,14 @@
 <script setup>
-import TheWelcome from "@/components/TheWelcome.vue";
+import SkillsInd from "@/components/Skills_Ind.vue";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 </script>
 
 <script>
 export default {
+  components: {
+    SkillsInd,
+  },
   mounted() {
     gsap.from(".skills_container_cls", {
       opacity: 0,
@@ -100,19 +103,7 @@ export default {
   <main id="skills_container" class="skills_container_cls">
     <div id="welcome-message-holder">
       <div v-for="skill in skills_info" :key="skill.id">
-        <div class="skill_desc_holder">
-          <div id="skill_holder">
-            <div id="skill_desc" class="desc_visibility">
-              <h2 id="desc_title">{{ skill.title }}</h2>
-              <p>{{ skill.desc }}</p>
-            </div>
-            <i
-              v-bind:class="skill.src"
-              id="skill_logo_img"
-              class="img_scroll"
-            ></i>
-          </div>
-        </div>
+        <SkillsInd :title="skill.title" :desc="skill.desc" :src="skill.src" />
       </div>
     </div>
   </main>

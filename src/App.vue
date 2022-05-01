@@ -237,7 +237,7 @@ a,
   bottom: 0;
   width: 0%;
   height: 2px;
-  background-color: rgb(12, 144, 151);
+  background-color: rgb(151, 30, 12);
 
   transform: scaleX(0);
   transition: 0.25s ease-in-out;
@@ -250,7 +250,7 @@ a,
 }
 
 #Nav-Item:hover {
-  color: rgb(22, 189, 240);
+  color: white;
   text-decoration-color: rgb(136, 42, 5);
   transition-duration: 0.25s;
   transition-timing-function: ease-in-out;

@@ -1,11 +1,47 @@
 <script>
 import anime from "animejs";
 import gsap from "gsap";
+import ProjectsInd from "@/components/Projects_Ind.vue";
 
 export default {
+  components: {
+    ProjectsInd,
+  },
+
   mounted() {
     gsap.from(".section_heading", { opacity: 0, duration: 2, delay: 2 });
     gsap.from(".ind_prj", { opacity: 0, duration: 2, y: 100, delay: 1 });
+  },
+
+  data() {
+    return {
+      ind_projects: [
+        {
+          id: 0,
+          title: "Nick's Guitar Shop",
+          href: "https://scott-dev226.github.io/Nicks_Guitar_Shop/",
+          href2: "https://github.com/Scott-Dev226/Nicks_Guitar_Shop",
+          desc: " A full-stack React / Node JS online shopping application with a theme based around guitar and bass instruments.",
+          lang: "JavaScript / JSX, CSS",
+          front:
+            "React JS, Axios, Bootstrap, GSAP, React Framer Motion, Redux, JSON Web",
+          back: "  Node.js, MySQL, Express, Nodemailer, Bcrypt JS",
+          img_src: "/assets/Nicks_Guitar_Shop.gif",
+        },
+
+        {
+          id: 1,
+          title: "Reeler's Choice",
+          href: "https://nicsco22.dreamhosters.com/login.php",
+          href2: "https://github.com/Scott-Dev226/Reelers_Choice",
+          desc: "A full-stack media application created with Javascript and PHP - allowing users to look up trailers, release information, and comment/rate their films of choice.",
+          lang: "HTML, CSS, Javascript,PHP",
+          front: "GreenSock Animation Platform (GSAP), JQuery",
+          back: " MySQL, Filezilla",
+          img_src: "/assets/Reelers_Choice.gif",
+        },
+      ],
+    };
   },
 };
 </script>
@@ -14,62 +50,18 @@ export default {
   <main id="projects_container">
     <h2 class="section_heading">PROJECTS</h2>
     <div class="proj_holder">
-      <div class="ind_prj">
-        <a href="https://scott-dev226.github.io/Nicks_Guitar_Shop/">
-          <span id="highlight_txt2"> Click Here to Visit Page </span> (Hover
-          below for info)
-        </a>
-        <div class="skill_desc_holder">
-          <div id="skill_desc" class="desc_visibility">
-            <h2 class="prj_title">Nick's Guitar Shop</h2>
-            <p>
-              A full-stack React / Node JS online shopping application with a
-              theme based around guitar and bass instruments.
-            </p>
-            <br />
-
-            <p>
-              <span id="highlight_txt">Languages: </span> JavaScript / JSX, CSS
-            </p>
-
-            <p>
-              <span id="highlight_txt"> Front-end Tools/UI:</span> React JS,
-              Axios, Bootstrap, GSAP, React Framer Motion, Redux, JSON Web
-            </p>
-
-            <p>
-              <span id="highlight_txt"> Back-end Tools/Database: </span>
-              Node.js, MySQL, Express, Nodemailer, Bcrypt JS
-            </p>
-          </div>
-
-          <img src="/assets/Nicks_Guitar_Shop.gif" class="proj_image" />
-        </div>
-      </div>
-      <div class="ind_prj">
-        <a href="https://nicsco22.dreamhosters.com/login.php">
-          <span id="highlight_txt2"> Click Here to Visit Page </span> (Hover
-          below for info)
-        </a>
-        <div class="skill_desc_holder">
-          <div id="skill_desc" class="desc_visibility">
-            <h2 class="prj_title">Reeler's Choice</h2>
-            <p>
-              A full-stack media application created with Javascript and PHP -
-              allowing users to look up trailers, release information, and
-              comment/rate their films of choice.
-            </p>
-            <br />
-            <p>
-              <span id="highlight_txt">Languages:</span> HTML, CSS, Javascript,
-              PHP
-            </p>
-
-            <p>
-              <span id="highlight_txt">Back-end Tools/Database: </span> MySQL
-            </p>
-          </div>
-          <img src="/assets/Reelers_Choice.gif" class="proj_image" />
+      <div v-for="project in ind_projects" :key="project.id">
+        <div class="ind_prj">
+          <ProjectsInd
+            :title="project.title"
+            :href="project.href"
+            :href2="project.href2"
+            :desc="project.desc"
+            :lang="project.lang"
+            :front="project.front"
+            :back="project.back"
+            :img_src="project.img_src"
+          />
         </div>
       </div>
     </div>
@@ -86,6 +78,7 @@ export default {
   overflow: hidden;
   background-position: center;
   display: flex;
+
   flex-direction: column;
   background-color: rgb(4, 0, 16);
   background-position: 0%20.5%;
@@ -115,7 +108,7 @@ a {
 
 .ind_prj {
   margin-top: 20px;
-  height: 220px;
+  height: 235px;
   width: 480px;
   overflow: hidden;
   object-fit: cover;
@@ -149,7 +142,7 @@ a {
 }
 
 .ind_prj:hover:before {
-  height: 220px;
+  height: 235px;
   width: 480px;
   border: 2.5px dotted red;
   border-right: none;
@@ -158,7 +151,7 @@ a {
 }
 
 .ind_prj:hover:after {
-  height: 220px;
+  height: 235px;
   width: 480px;
   border: 2.5px dotted red;
   border-left: none;
