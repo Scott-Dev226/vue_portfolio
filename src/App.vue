@@ -26,7 +26,9 @@ export default {
   mounted() {
     gsap.registerPlugin(ScrollTrigger);
 
-    this.scrollTriggerFire();
+    this.scrollTriggerFire(".img_scroll");
+    this.scrollTriggerFire(".about");
+
     gsap.from(".main_container_cls", {
       duration: 1,
       opacity: 0,
@@ -43,28 +45,30 @@ export default {
   },
 
   methods: {
-    scrollTriggerFire: function () {
-      const boxes = gsap.utils.toArray(".img_scroll");
-      const anim = gsap.to(".img_scroll", {
+    scrollTriggerFire: function (target) {
+      const boxes = gsap.utils.toArray(`${target}`);
+      const anim = gsap.to(target, {
         filter: "blur(0px)",
         opacity: 1,
         x: 0,
+        y: 0,
         paused: true,
         stagger: 0.2,
         duration: 1,
       });
 
       ScrollTrigger.create({
-        trigger: ".img_scroll",
+        trigger: target,
         start: "top 70%",
         onEnter: () => anim.play(),
       });
 
       ScrollTrigger.create({
-        trigger: ".img_scroll",
+        trigger: target,
         start: "top 90%",
         onLeaveBack: () => anim.pause(0),
       });
+      target;
     },
     myGoto: function (refName) {
       var element = this.$refs[refName];

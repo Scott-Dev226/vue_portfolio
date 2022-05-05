@@ -1,3 +1,8 @@
+<script setup>
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+</script>
+
 <template>
   <div class="about">
     <h2 class="section_heading">Contact</h2>
@@ -12,12 +17,16 @@
 
 <style scoped>
 .about {
-  height: 300px;
+  height: 400px;
   display: flex;
   justify-content: center;
   color: white;
   display: flex;
   flex-direction: column;
+  opacity: 0;
+  filter: blur(50px);
+  transform: translateY(50px);
+  margin-bottom: 50px;
 }
 
 #cta-holder {
