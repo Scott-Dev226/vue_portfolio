@@ -262,8 +262,8 @@ a {
   }
   #skill_desc {
     font-size: 0.675rem;
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-right: 5px;
+    padding-left: 5px;
     width: 59%;
     height: 187.5px;
   }
@@ -277,7 +277,7 @@ a {
   }
 
   .ind_prj {
-    height: 220px;
+    height: 235px;
     width: 330px;
     margin-right: 0px;
     margin-bottom: 30px;

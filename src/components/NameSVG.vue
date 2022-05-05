@@ -9,7 +9,7 @@ export default {
       easing: "easeInOutSine",
       duration: 1500,
       delay: function (el, i) {
-        return i * 150;
+        return i * 300;
       },
       direction: "alternate",
       loop: false,
@@ -21,7 +21,7 @@ export default {
       easing: "easeInOutSine",
       duration: 1200,
       delay: function (el, i) {
-        return 4000;
+        return 7250;
       },
       direction: "alternate",
       loop: false,

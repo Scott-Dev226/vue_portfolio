@@ -15,11 +15,11 @@ export default {
 
 <template>
   <div id="ins_holder">
-    <a :href="href" id="btn_link">
+    <a :href="href" id="btn_link" target="_blank">
       <button id="highlight_btn">Visit Web Page</button>
     </a>
 
-    <a :href="href2" id="btn_link">
+    <a :href="href2" id="btn_link" target="_blank">
       <button id="highlight_btn">Github Repository</button>
     </a>
 
@@ -151,13 +151,11 @@ a {
 #skill_desc {
   position: absolute;
 
-  left: 2px;
-  right: 2px;
   border-radius: 15px;
   color: white;
   opacity: 0;
 
-  height: 180px;
+  height: 177px;
   width: 470px;
 
   z-index: 1000;
@@ -228,7 +226,7 @@ a {
 
 .proj_image {
   opacity: 0.85;
-  height: 180px;
+  height: 177px;
   border-radius: 15px;
   width: 380px;
   background-color: transparent;
