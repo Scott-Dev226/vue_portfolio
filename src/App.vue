@@ -102,22 +102,22 @@ export default {
     </div>
   </header>
 
-  <div id="main_container" class="main_container_cls">
-    <div ref="home">
+  <main id="main_container" class="main_container_cls">
+    <section ref="home">
       <NameSVG />
-    </div>
-    <div ref="projects">
+    </section>
+    <section ref="projects">
       <ProjectsView ref="projects" />
-    </div>
+    </section>
 
-    <div ref="skills">
+    <section ref="skills">
       <SkillsView ref="skills" />
-    </div>
+    </section>
+  </main>
 
-    <div ref="about">
-      <AboutView />
-    </div>
-  </div>
+  <footer id="footer_container" ref="about">
+    <AboutView />
+  </footer>
 </template>
 
 <style>
@@ -167,6 +167,16 @@ export default {
 }
 
 #main_container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background-color: #000;
+}
+
+#footer_container {
   width: 100%;
   height: 100%;
   display: flex;

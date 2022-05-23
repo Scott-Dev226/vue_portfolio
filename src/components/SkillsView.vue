@@ -100,13 +100,13 @@ export default {
 
 <template>
   <h2 class="section_heading">SKILLS</h2>
-  <main id="skills_container" class="skills_container_cls">
+  <div id="skills_container" class="skills_container_cls">
     <div id="welcome-message-holder">
       <div v-for="skill in skills_info" :key="skill.id">
         <SkillsInd :title="skill.title" :desc="skill.desc" :src="skill.src" />
       </div>
     </div>
-  </main>
+  </div>
 </template>
 
 <style scoped>

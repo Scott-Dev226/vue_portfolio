@@ -47,7 +47,7 @@ export default {
 </script>
 
 <template>
-  <main id="projects_container">
+  <div id="projects_container">
     <h2 class="section_heading">PROJECTS</h2>
     <div class="proj_holder">
       <div v-for="project in ind_projects" :key="project.id">
@@ -65,7 +65,7 @@ export default {
         </div>
       </div>
     </div>
-  </main>
+  </div>
 </template>
 
 <style scoped>
